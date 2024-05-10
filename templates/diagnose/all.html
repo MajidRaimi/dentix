@@ -1,0 +1,25 @@
+{% include 'common/header.html' %}
+{% include 'common/navbar.html' %}
+
+<div class="max-w-6xl mx-auto mt-8 h-screen">
+    <div class="flex flex-wrap gap-8 items-center justify-start">
+        {% for diagnosis in diagnoses %}
+        <div class="card w-72 bg-base-100 shadow-xl rounded-md">
+            <figure><img src="/{{diagnosis.result}}" alt="X-Ray Image" />
+            </figure>
+            <div class="card-body">
+                <h2 class="card-title text-center bg-slate-200 mx-auto">{{diagnosis.title}}</h2>
+                <p class="font-bold">Patient ID <span>112233</span></p>
+                <div class="card-actions justify-end">
+                    <a class="btn btn-secondary text-white" href="/diagnose/{{diagnosis.id}}">Inspect</a>
+                </div>
+            </div>
+        </div>
+
+
+        {% endfor %}
+    </div>
+</div>
+
+
+{% include 'common/footer.html' %}

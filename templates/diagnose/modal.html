@@ -1,0 +1,38 @@
+<div class="modal" role="dialog" id="diagnose_modal">
+    <form class="modal-box   space-12 " method="POST" action="/diagnose" enctype="multipart/form-data">
+        <a class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" href="">✕</a>
+        <h3 class="font-bold text-lg">Diagnose an Image</h3>
+        <p class="py-4">Fill in the form below to add a new diagnoses </p>
+
+
+
+        <label class=" w-full max-w-xs ">
+            <div class="label">
+                <span class="label-text">Patient ID</span>
+            </div>
+            <input type="text" placeholder="123 xxx" class="input input-bordered w-full " name="id" />
+        </label>
+
+
+        <label class=" w-full max-w-xs ">
+            <div class="label">
+                <span class="label-text">What would you like to name the diagnoses?</span>
+            </div>
+            <input type="text" placeholder="Diagnose Name" class="input input-bordered w-full " name="title" />
+        </label>
+
+        <label class=" w-full max-w-xs">
+            <div class="label">
+                <span class="label-text">Pick an image</span>
+            </div>
+            <input type="file" class="file-input file-input-bordered w-full file-input-secondary" name="file" />
+            <div class="label">
+                <span class="label-text-alt">The better the image quality the better output will be.</span>
+            </div>
+        </label>
+
+        <div class="modal-action">
+            <button href="" class="btn btn-secondary text-white" type="submit">Diagnose</button>
+        </div>
+    </form>
+</div>

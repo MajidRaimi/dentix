@@ -1,0 +1,1 @@
+from . allowed_files import ALLOWED_FILES

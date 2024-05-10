@@ -1,0 +1,206 @@
+{% include 'common/header.html' %}
+{% include 'common/navbar.html' %}
+
+
+<section class="flex flex-col justify-center h-[94dvh] " id="hero">
+    <div class="w-full max-md:max-w-full h-full">
+        <div class="flex  max-md:flex-col max-md:gap-0 h-full">
+            <div class="flex flex-col w-12/12 lg:w-6/12 max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col grow justify-center self-stretch px-16 py-20 max-md:px-5 max-md:max-w-full">
+                    <h1
+                        class="mt-40 text-6xl  text-black leading-[67px] max-md:mt-10 max-md:max-w-full max-md:text-4xl max-md:leading-[54px]" data-aos="fade-right">
+                        Transforming Dental X-Ray Detection with <span class="text-[#0D1F4F] font-bold ">Dentix</span>
+                    </h1>
+                    <p class="mt-6 text-lg leading-7 text-black max-md:max-w-full" data-aos="fade-right" data-aos-delay="400">
+                        Experience the power of advanced dental x-ray detection technology with Dentix. Our innovative
+                        solution provides accurate and efficient detection for dental x-ray images, helping dentists
+                        make informed diagnoses and deliver exceptional patient care.
+                    </p>
+                    <div class="flex gap-4 items-start self-start pt-4 mt-6 text-base leading-6" data-aos="fade-right" data-aos-delay="500">
+                        <button class="btn btn-secondary">
+                            Learn More
+                        </button>
+                        <button class="btn btn-ghost">
+                            Sign Up
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full  items-center justify-center h-full hidden lg:flex" data-aos="fade-left">
+                <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="" class="w-[26rem]" data-aos-delay="500" data-aos="fade-left">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="flex flex-col items-center px-16 py-20 text-center text-black max-md:px-5 bg-gray-50" id="info">
+    <h1 class="mt-8 text-4xl font-bold leading-10 max-md:max-w-full text-[#0D1F4F] font-bold" data-aos="fade-up" >Dentix</h1>
+    <p class="mt-6 text-lg leading-7 max-w-[768px] max-md:max-w-full" data-aos="fade-up" data-aos-delay="300">
+        Dentix is a revolutionary website designed specifically for dentists. Our mission is to provide advanced dental
+        x-ray image detection technology to help dentists accurately diagnose and treat their patients.
+    </p>
+</section>
+
+<section class="flex flex-col justify-center px-16 py-20 bg-white max-md:px-5" id="features" data-aos="fade-up" data-aos-delay="300">
+    <div class="mt-8 max-md:mr-1 max-md:max-w-full">
+        <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+            <div class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                <div
+                    class="flex flex-col self-stretch my-auto text-base leading-6 text-black max-md:mt-10 max-md:max-w-full">
+                    <h2 class="font-semibold text-center max-md:max-w-full" data-aos="fade-up" data-aos-delay="350">Revolutionary</h2>
+                    <h1
+                        class="mt-4 text-5xl font-bold leading-[58px] max-md:max-w-full max-md:text-4xl max-md:leading-[54px]" data-aos="fade-up" data-aos-delay="400">
+                        Superior Detection Technology for Enhanced Dental Care
+                    </h1>
+                    <p class="mt-6 text-lg leading-7 max-md:max-w-full" data-aos="fade-up" data-aos-delay="450">
+                        Dentix offers advanced detection capabilities to dentists, providing precise and reliable
+                        results for improved patient care.
+                    </p>
+                    <div class="flex gap-4 mt-10 max-md:flex-wrap" data-aos="fade-left" data-aos-delay="500">
+                        <img loading="lazy"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/17232e3d7db3ef18743955ad3e563b1bea0650b97f6f81c1a7da96ae1b31ab29?apiKey=6cc0b70c29774f3cb37ccd423f1ab7cc&"
+                            alt="" class="shrink-0 my-auto w-4 aspect-square" />
+                        <p class="flex-1 max-md:max-w-full">Accurate and Efficient Detection for Dental X-ray Images</p>
+                    </div>
+                    <div class="flex gap-4 mt-4 max-md:flex-wrap" data-aos="fade-left" data-aos-delay="600">
+                        <img loading="lazy"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/313da9a1a0f6adf2140a86a19d998385ebfff25f2cdb01435e4825898677e901?apiKey=6cc0b70c29774f3cb37ccd423f1ab7cc&"
+                            alt="" class="shrink-0 my-auto w-4 aspect-square" />
+                        <p class="flex-1 max-md:max-w-full">Streamlined Workflow for Dental Professionals</p>
+                    </div>
+                    <div class="flex gap-4 mt-4 max-md:flex-wrap" data-aos="fade-left" data-aos-delay="700">
+                        <img loading="lazy"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/313da9a1a0f6adf2140a86a19d998385ebfff25f2cdb01435e4825898677e901?apiKey=6cc0b70c29774f3cb37ccd423f1ab7cc&"
+                            alt="" class="shrink-0 my-auto w-4 aspect-square" />
+                        <p class="flex-1 max-md:max-w-full">Improved Diagnosis and Treatment Planning for Dentists</p>
+                    </div>
+                    <div class="flex gap-5 justify-between items-start self-start pt-4 mt-8" data-aos="fade-left" data-aos-delay="800">
+                        <button class="btn btn-secondary">
+                            Learn More
+                        </button>
+                        <button class="btn btn-ghost">
+                            Sign Up
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full rounded-xl" data-aos="fade-right" data-aos-delay="=900">
+                <img loading="lazy" src="{{ url_for('static', filename='images/result.jpg') }}"
+                    alt="Dentix Detection Technology"
+                    class="grow w-full aspect-[0.96] max-md:mt-10 max-md:max-w-full object-contain rounded-xl" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="flex flex-col px-16 py-20 bg-gray-50 max-md:px-5">
+    <h1 class="self-center mt-8 text-4xl font-bold leading-10 text-center text-black w-[768px] max-md:max-w-full" data-aos="fade-up">
+        Dentix: Advanced Dental X-Ray Image Detection
+    </h1>
+    <div class="justify-center mt-20 max-md:mt-10 max-md:max-w-full">
+        <div class="flex gap-5 max-md:flex-col max-md:gap-0 flex-wrap items-center justify-center">
+            <article class="flex flex-col items-center justify-center max-md:ml-0  w-[24rem]" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col grow text-base text-black max-md:mt-8">
+                    <div class="w-full h-48 bg-[#0d1f4f] rounded-xl grid place-content-center ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-24 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Zm3.75 11.625a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                        </svg>
+
+                    </div>
+                    <h2 class="mt-6 text-2xl font-bold leading-9 text-center">
+                        Seamless X-Ray Image Detection
+                    </h2>
+                    <p class="mt-4 leading-6 text-center">
+                        Dentix seamlessly integrates with your existing systems, making it easy to use.
+                    </p>
+                </div>
+            </article>
+            <article class="flex flex-col ml-5 items-center jutify-center max-md:ml-0  w-[24rem]" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex flex-col text-base text-black max-md:mt-8">
+                    <div class="w-full h-48 bg-[#0d1f4f] rounded-xl grid place-content-center ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-24 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                        </svg>
+                    </div>
+                    <h2 class="mt-6 text-2xl font-bold leading-9 text-center">
+                        Efficient X-Ray Image Processing
+                    </h2>
+                    <p class="mt-4 leading-6 text-center">
+                        Dentix supports various x-ray image formats for accurate detection.
+                    </p>
+                </div>
+            </article>
+            <article class="flex flex-col ml-5 items-center jutify-center max-md:ml-0 w-[24rem] " data-aos="fade-up" data-aos-delay="600">
+                <div class="flex flex-col text-base text-black max-md:mt-8">
+                    <div class="w-full h-48 bg-[#0d1f4f] rounded-xl grid place-content-center ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-24 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
+                        </svg>
+                    </div>
+                    <h2 class="mt-6 text-2xl font-bold leading-8 text-center">
+                        User-Friendly Interface
+                    </h2>
+                    <p class="mt-4 leading-6 text-center">
+                        Dentix provides a user-friendly interface for easy navigation and operation.
+                    </p>
+                </div>
+            </article>
+            <article class="flex flex-col ml-5 items-center jutify-center max-md:ml-0 w-[24rem]" data-aos="fade-up" data-aos-delay="800">
+                <div class="flex flex-col text-base text-black max-md:mt-8">
+                    <div class="w-full h-48 bg-[#0d1f4f] rounded-xl grid place-content-center ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-24 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                        </svg>
+
+                    </div>
+                    <h2 class="mt-6 text-2xl font-bold leading-9 text-center">
+                        Reliable Support and Assistance
+                    </h2>
+                    <p class="mt-4 leading-6 text-center">
+                        Our dedicated team is available to provide reliable support and assistance.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-24 w-full flex flex-col items-center justify-center  text-black">
+    <h1 class='text-2xl md:text-4xl text-center md:text-start' data-aos="fade-up" data-aos-delay="200">Contact Us.</h1>
+    <p data-aos="fade-up" data-aos-delay="200">
+        Have a question or need assistance? Contact us today.
+    </p>
+    <form action="" class="flex flex-col items-center md:items-start mt-12 max-w-xs md:max-w-xl w-full gap-4" data-aos="fade-up" data-aos-delay="400">
+        <label class="input input-bordered flex items-center gap-2 w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
+                <path
+                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+            </svg>
+            <input type="text" class="grow" placeholder="Name" />
+        </label>
+        <label class="input input-bordered flex items-center gap-2 w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
+                <path
+                    d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+                <path
+                    d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+            </svg>
+            <input type="text" class="grow" placeholder="Email" />
+        </label>
+        <textarea class="textarea textarea-bordered w-full" placeholder="Message"></textarea>
+        <button class="w-full btn btn-secondary">Send</button>
+    </form>
+</section>
+
+
+{% include 'common/footer.html' %}

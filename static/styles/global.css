@@ -1,0 +1,15 @@
+* {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.btn-secondary {
+  background-color: #0d1f4f;
+}
+
+.btn-secondary:hover {
+  background-color: #101F4A;
+}
+

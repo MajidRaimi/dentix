@@ -1,0 +1,28 @@
+{% include 'common/header.html' %}
+
+<main class="min-h-screen grid grid-cols-1 sm:grid-cols-2  ">
+    <div class="col-span-1 flex flex-col items-center justify-between bg-[#f5f5f4]">
+        <div class="p-4 shadow-md w-full text-center font-bold text-xl bg-white">Forgot Password Page</div>
+        <form class="flex flex-col items-center w-full space-y-4 max-w-xs" action="/forgot" method="POST">
+            <input name="email" type="email" class="input input-md input-bordered w-full h-10" placeholder="Email"
+                required>
+                {% if error %}
+                <p>
+                    <span class="text-rose-600 text-sm">{{ error }}</span>
+                </p>
+                {% endif %}
+            <button class="btn btn-secondary btn-sm w-full">Send Email</button>
+            <span>
+                Remembered your password? <a href="/login" class="text-center text-[#0D1F4F] underline">Back to
+                    login</a>
+            </span>
+        </form>
+        <div></div>
+    </div>
+    <div class="col-span-1 bg-[#0d1f4f]  flex-col items-center justify-center hidden sm:flex">
+        <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="" class="w-64">
+    </div>
+</main>
+
+
+{% include 'common/footer.html' %}

@@ -1,0 +1,80 @@
+{% include 'common/header.html' %}
+{% include 'common/navbar.html' %}
+
+<div class="max-w-6xl mx-auto">
+    <div class="diff aspect-[16/9] h-[70vh] mt-8 ">
+        <div class="diff-item-1">
+            <div class=" grid place-content-center">
+                <img src="/{{prediction.image}}" class="rounded-md" alt="">
+            </div>
+        </div>
+        <div class="diff-item-2">
+            <div class=" grid place-content-center">
+                <img src="/{{prediction.result}}" class="rounded-md" alt="">
+            </div>
+        </div>
+        <div class="diff-resizer "></div>
+    </div>
+
+
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-8">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs  uppercase bg-gray-50 text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Id
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Prediction
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Confidence
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- for loop each label -->
+                {% for label in labels %}
+                <tr class="bg-white ">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-900 ">
+                            {{label.index + 1}}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-900 ">
+                            {{label.label}}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <!-- if the score is above 75 the color must be green if between 75 and 30 yellow and below red -->
+                        {% if label.score > 75 %}
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                            {{label.score}}
+                        </span>
+                        {% elif label.score > 30 %}
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                            {{label.score}}
+                        </span>
+                        {% else %}
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                            {{label.score}}
+                        </span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+</div>
+
+
+{% include 'common/footer.html' %}

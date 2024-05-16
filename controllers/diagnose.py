@@ -10,15 +10,15 @@ from prisma.models import Label
 helper = PredictHelper(os.getcwd() + '/static/models/best_08.pt')
 
 
-
 class DiagnoseController():
 
     @staticmethod
     @prisma_session
-    async def diagnose(title: str, image_path:str,prisma:Prisma):
+    async def diagnose(title: str, patient: str,  image_path: str, prisma: Prisma):
         results = helper.predict(image_path)
         labeled_path = helper.draw_prediction(image_path, results)
-        labels = [{'label': label, 'score': score} for label, score, _ in results]
+        labels = [{'label': label, 'score': score}
+                  for label, score, _ in results]
 
         user_id = session.get('user')['id']
 
@@ -28,6 +28,7 @@ class DiagnoseController():
                 'image': image_path,
                 'result': labeled_path,
                 'user_id': user_id,
+                'patient': patient,
                 'labels': {
                     'create': labels
                 }
@@ -38,7 +39,7 @@ class DiagnoseController():
 
     @staticmethod
     @prisma_session
-    async def get_diagnoses(prisma:Prisma):
+    async def get_diagnoses(prisma: Prisma):
         user_id = session.get('user')['id']
         diagnoses = await prisma.prediction.find_many(
             where={
@@ -46,16 +47,17 @@ class DiagnoseController():
             }
         )
 
-        logging.critical(diagnoses)
-
-
         diagnoses = [diagnose.model_dump() for diagnose in diagnoses]
+
+        for diagnose in diagnoses:
+            diagnose['created_at'] = diagnose['created_at'].strftime(
+                "%d %b %Y %H:%M:%S")
 
         return diagnoses
 
     @staticmethod
     @prisma_session
-    async def get_diagnose(prediction_id:str, prisma:Prisma):
+    async def get_diagnose(prediction_id: str, prisma: Prisma):
         prediction = await prisma.prediction.find_unique(
             where={
                 'id': prediction_id

@@ -1,20 +1,35 @@
 {% include 'common/header.html' %}
 {% include 'common/navbar.html' %}
 
-<div class="max-w-6xl mx-auto mt-8 h-screen">
-    <div class="flex flex-wrap gap-8 items-center justify-start">
+<div class="max-w-6xl mx-auto mt-8 min-h-screen ">
+    {% if diagnoses|length == 0 %}
+    <div class="flex flex-col gap-4 items-center justify-center h-screen ">
+        <img src="{{ url_for('static', filename='images/empty.svg') }}" alt="" class="w-72">
+        <h1 class="text-center text-2xl font-bold text-[#0D1F4F]">No Diagnoses Yet.</h1>
+    </div>
+    {% endif %}
+
+    <div class="flex flex-wrap gap-8 items-center justify-center h-full w-full">
+
+
+
         {% for diagnosis in diagnoses %}
-        <div class="card w-72 bg-base-100 shadow-xl rounded-md">
+        <div class="card w-96 bg-base-100 shadow-xl rounded-md hover:shadow-2xl duration-300">
             <figure><img src="/{{diagnosis.result}}" alt="X-Ray Image" />
             </figure>
             <div class="card-body">
-                <h2 class="card-title text-center bg-slate-200 mx-auto">{{diagnosis.title}}</h2>
-                <p class="font-bold">Patient ID <span>112233</span></p>
+                <p>
+                    Dental diagnoses <span class="font-bold">{{diagnosis.title}}</span> for patient <span
+                        class="font-bold">{{diagnosis.patient}}</span> created <span
+                        class="font-bold">{{diagnosis.created_at}}</span>
+                </p>
+
                 <div class="card-actions justify-end">
                     <a class="btn btn-secondary text-white" href="/diagnose/{{diagnosis.id}}">Inspect</a>
                 </div>
             </div>
         </div>
+
 
 
         {% endfor %}

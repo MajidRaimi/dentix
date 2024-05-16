@@ -9,6 +9,7 @@ click==8.1.7
 coloredlogs==15.0.1
 contourpy==1.2.1
 cycler==0.12.1
+dnspython==2.6.1
 exceptiongroup==1.2.1
 filelock==3.14.0
 Flask==3.0.3
@@ -37,6 +38,7 @@ psutil==5.9.8
 py-cpuinfo==9.0.0
 pydantic==2.7.1
 pydantic_core==2.18.2
+pymongo==4.7.2
 pyparsing==3.1.2
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1

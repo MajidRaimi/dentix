@@ -40,4 +40,6 @@ model Prediction {
     title   String
     image   String
     result  String
+    patient String
+    created_at      DateTime @default(now())
 }

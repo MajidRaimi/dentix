@@ -13,3 +13,6 @@
   background-color: #101F4A;
 }
 
+html {
+  scroll-behavior: smooth;
+}

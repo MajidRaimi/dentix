@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, session, flash, redirect, url_for
 from lib import send_welcome_email
-from routes import auth_router, diagnose_router
+from routes import auth_router, diagnose_router, dashboard_router
 from dotenv import load_dotenv
 import os
 import json
@@ -11,6 +11,7 @@ app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY')
 app.register_blueprint(auth_router)
 app.register_blueprint(diagnose_router, url_prefix='/diagnose')
+app.register_blueprint(dashboard_router, url_prefix='/dashboard')
 
 @app.route('/')
 async def index():

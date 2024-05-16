@@ -15,7 +15,9 @@ router = Blueprint('/diagnose', __name__)
 async def diagnose():
     file = request.files['file']
     title = request.form['title']
-    # patient = request.form['patient']
+    patient = str(request.form['patient'])
+
+
     file_extension = file.filename.split('.')[-1]
     if file_extension not in ALLOWED_FILES:
         flash('Invalid file type', 'error')
@@ -24,7 +26,7 @@ async def diagnose():
     file_path = f'static/uploads/{file.filename}'
     file.save(file_path)
 
-    prediction_id = await controller.diagnose(title, file_path)
+    prediction_id = await controller.diagnose(title, patient, file_path)
     return redirect(f'/diagnose/{prediction_id}')
 
 @router.route('/all', methods=['GET'])

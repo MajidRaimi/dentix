@@ -30,6 +30,8 @@ class AuthController:
     async def signup(dto:SignupDTO, prisma:Prisma):
         if await prisma.user.find_unique(where={'email': dto.email}):
             raise Exception('Email already exists')
+        if dto.password != dto.confirm_password:
+            raise Exception('Passwords do not match')
 
         salt = gensalt()
         hashed_password = hashpw(dto.password.encode(), salt)

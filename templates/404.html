@@ -1,0 +1,16 @@
+{% include 'common/header.html' %}
+
+
+<div class="h-screen flex flex-col items-center justify-center gap-4">
+    <img src="{{url_for('static', filename='images/404.svg')}}" alt="" class="w-64 lg:w-72">
+    <h1 class='text-3xl text-secondary'>Could not found this page.</h1>
+    <p class='text-sm'>
+        Please check the URL in the address bar and try again.
+    </p>
+    <a href="/" class="btn btn-secondary">Go back to home</a>
+</div>
+
+
+</body>
+
+</html>

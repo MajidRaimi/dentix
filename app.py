@@ -17,6 +17,10 @@ app.register_blueprint(dashboard_router, url_prefix='/dashboard')
 async def index():
     return render_template('index.html', user=session.get('user', {}))
 
+@app.errorhandler(404)
+async def not_found(e):
+    return render_template('404.html')
+
 
 if __name__ == '__main__':
     coloredlogs.install()

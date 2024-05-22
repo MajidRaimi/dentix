@@ -25,7 +25,8 @@
             <div class="label">
                 <span class="label-text">Pick an image</span>
             </div>
-            <input type="file" class="file-input file-input-bordered w-full file-input-secondary" name="file" required />
+            <input type="file" class="file-input file-input-bordered w-full file-input-secondary" name="file"
+                required />
             <div class="label">
                 <span class="label-text-alt">The better the image quality the better output will be.</span>
             </div>
@@ -33,6 +34,71 @@
 
         <div class="modal-action">
             <button href="" class="btn btn-secondary text-white" type="submit">Diagnose</button>
+        </div>
+    </form>
+</div>
+
+
+<div class="modal" role="dialog" id="update_modal">
+    <form class="modal-box   space-12 " method="POST" action="/update" enctype="multipart/form-data">
+        <a class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" href="">✕</a>
+        <h3 class="font-bold text-lg">Welcome Back {{ user.first_name }}</h3>
+        <p class="py-4">Update your profile </p>
+
+        <label class=" w-full flex items-center justify-center ">
+            <div class=" rounded-full  relative">
+                <img alt="Profile Image" accept="image/png, image/gif, image/jpeg" required
+                    src="{{ user.profile_image }}" class="size-24" />
+                <div class="absolute bottom-0 right-0 p-1 bg-secondary text-white rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                    </svg>
+
+                </div>
+            </div>
+            <input type="file" class="hidden" name="profile_image" accept="image/png, image/gif, image/jpeg"
+                onchange="this.form.submit()" />
+        </label>
+
+        <div class="flex gap-2 mt-4">
+            <label class=" w-full max-w-xs ">
+                <div class="label">
+                    <span class="label-text">First Name</span>
+                </div>
+                <input type="text" placeholder="John" class="input input-bordered w-full " name="first_name" required
+                    value="{{user.first_name}}" />
+            </label>
+            <label class=" w-full max-w-xs ">
+                <div class="label">
+                    <span class="label-text">Last Name</span>
+                </div>
+                <input type="text" placeholder="Doe" class="input input-bordered w-full " name="last_name" required
+                    value="{{user.last_name}}" />
+            </label>
+        </div>
+
+        <label class=" w-full max-w-xs ">
+            <div class="label">
+                <span class="label-text">Email</span>
+            </div>
+            <input type="text" class="input input-bordered w-full " name="email" required disabled
+                value="{{user.email}}" />
+        </label>
+
+        <label class=" w-full max-w-xs ">
+            <div class="label">
+                <span class="label-text">Phone Number</span>
+            </div>
+            <input type="text" placeholder="05 xxx" class="input input-bordered w-full " name="patient" required
+                disabled value="{{user.phone_number}}" />
+        </label>
+
+
+        <div class="modal-action justify-between">
+            <button href="" class="btn btn-ghost " type="submit">Send Reset Password Email</button>
+            <button href="" class="btn btn-secondary text-white" type="submit">Update Profile</button>
         </div>
     </form>
 </div>

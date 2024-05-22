@@ -43,7 +43,7 @@ class AuthController:
             'phone_number': dto.phone_number,
             'hashed_password': str(hashed_password, 'utf-8'),
             'role': 'DOCTOR',
-            'profile_image': f'https://boring-avatars-api.vercel.app/api/avatar?size=40&variant=beam&name={dto.phone_number}'
+            'profile_image': f'https://boring-avatars-api.vercel.app/api/avatar?size=40&variant=beam&name={dto.email}'
         })
 
         user = await prisma.user.find_unique(where={'id': user.id})
@@ -64,3 +64,27 @@ class AuthController:
             return True
         except:
             return False
+
+
+    @staticmethod
+    @prisma_session
+    async def update(first_name:str, last_name: str, profile_image:str, prisma:Prisma):
+        user = session.get('user', {})
+        if not user:
+            return False
+
+        user = await prisma.user.update(where={'id': user['id']}, data={
+            'first_name': first_name,
+            'last_name': last_name,
+            'profile_image': profile_image
+        })
+
+        user = user.model_dump()
+        if user['hashed_password']:
+            del user['hashed_password']
+
+        if user:
+            session['user'] = user
+            return True
+
+        return False
